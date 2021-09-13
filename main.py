@@ -37,9 +37,9 @@ if __name__ == "__main__":
   }
 
   parser = argparse.ArgumentParser(
-    description='Сокращение ссылок'
+    description="Сокращение ссылок"
   )
-  parser.add_argument('link', help='Ссылка для сокращения или битлинк для получения информации о нем')
+  parser.add_argument("link", help="Ссылка для сокращения или битлинк для получения информации о нем")
   link = parser.parse_args().link
 
   parsed_link = urlparse(link)
