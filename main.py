@@ -28,13 +28,13 @@ def count_clicks(bitlink, head):
   response.raise_for_status()
   return response.json()["total_clicks"]
 
+
 if __name__ == "__main__":
   load_dotenv()
 
   headers = {
     "Authorization": os.environ["BITLY_TOKEN"]
   }
-
 
   parser = argparse.ArgumentParser(
     description='Сокращение ссылок'
@@ -44,8 +44,6 @@ if __name__ == "__main__":
 
   parsed_link = urlparse(user_url)
   user_url_without_scheme = f"{parsed_link.netloc}{parsed_link.path}"
-
-
 
   if is_bitlink(user_url_without_scheme, headers):
     try:
