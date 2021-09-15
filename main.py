@@ -6,15 +6,15 @@ from urllib.parse import urlparse
 from dotenv import load_dotenv
 
 
-def is_bitlink(url_link, head):
-  url = f"https://api-ssl.bitly.com/v4/bitlinks/{url_link}"
+def is_bitlink(link, head):
+  url = f"https://api-ssl.bitly.com/v4/bitlinks/{link}"
   response = requests.get(url, headers=head)
   return response.ok
 
 
-def shorten_link(head, url_link):
+def shorten_link(head, link):
   body = {
-    "long_url": url_link
+    "long_url": link
   }
 
   url = "https://api-ssl.bitly.com/v4/bitlinks"
